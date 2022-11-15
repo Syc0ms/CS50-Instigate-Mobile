@@ -8,7 +8,7 @@ using namespace std;
 void print_array(std::vector<int> arr, int size);
 void generate_array(const int size, std::vector<int>* arr);
 void bubleSort(std::vector< int> *arr, int size);
-//void selectionSort(std::vector<int> *arr,int size);
+void selectionSort(std::vector<int> *arr,int size);
 
 int main()
 {
@@ -31,6 +31,13 @@ int main()
         print_array(arr2, s2);
 
         bubleSort(&arr3, s3);
+        print_array(arr3, s3);
+
+        selectionSort(&arr1, s1);
+        print_array(arr1, s1);
+        selectionSort(&arr2, s2);
+        print_array(arr2, s2);
+        selectionSort(&arr3, s3);
         print_array(arr3, s3);
 
 }
@@ -76,25 +83,25 @@ void bubleSort(std::vector<int> *arr,int size)
                 }        
         }
 }
-/*void selectionSort(std::vector<int> *arr,int size)
-{
-    int i, j, smallestPosition, temp;
 
-    for (i = 0; i < size - 1; i++)
+void selectionSort(std::vector<int> *arr,int size)
+{
+    for (int i = 0; i < size - 1; i++)
     {
 
-        smallestPosition = i;
-        for (j = i+1; j < size; j++){
-                if (arr[j] < arr[smallestPosition])
+        int smallestPosition = i;
+        for (int j = i + 1; j < size; j++){
+                if (arr->at(j) < arr->at(smallestPosition))
                 {
                         smallestPosition = j;
                 }
         }
         if(smallestPosition!=i){
+                int temp;
                 temp = arr->at(smallestPosition);
                 arr->at(smallestPosition) = arr->at(i);
                 arr->at(i) = temp;
 
         }
     }
-}*/
+}
