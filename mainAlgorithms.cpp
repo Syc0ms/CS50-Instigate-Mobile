@@ -29,38 +29,53 @@ int main()
         generate_array(sizeOfArray2, arr2);
         generate_array(sizeOfArray3, arr3);
         
+        generate_array(sizeOfArray1, arr1);
         bubleSort(sizeOfArray1, arr1);
         print_array(sizeOfArray1, arr1);
+        generate_array(sizeOfArray2, arr2);
         bubleSort(sizeOfArray2, arr2);
         print_array(sizeOfArray2, arr2);
+        generate_array(sizeOfArray3, arr3);
         bubleSort(sizeOfArray3, arr3);
         print_array(sizeOfArray3, arr3);
 
+        generate_array(sizeOfArray1, arr1);
         selectionSort(sizeOfArray1, arr1);
         print_array(sizeOfArray1, arr1);
+        generate_array(sizeOfArray2, arr2);
         selectionSort(sizeOfArray2, arr2);
         print_array(sizeOfArray2, arr2);
+        generate_array(sizeOfArray3, arr3);
         selectionSort(sizeOfArray3, arr3);
         print_array(sizeOfArray3, arr3);
 
+        generate_array(sizeOfArray1, arr1);
         insertionSort(sizeOfArray1, arr1);
         print_array(sizeOfArray1, arr1);
+        generate_array(sizeOfArray2, arr2);
         insertionSort(sizeOfArray2, arr2);
         print_array(sizeOfArray2, arr2);
+        generate_array(sizeOfArray3, arr3);
         insertionSort(sizeOfArray3, arr3);
         print_array(sizeOfArray3, arr3);
 
+        generate_array(sizeOfArray1, arr1);
         mergeSort(arr1, 0, sizeOfArray1 - 1);
         print_array(sizeOfArray1, arr1);
+        generate_array(sizeOfArray2, arr2);
         mergeSort(arr2, 0, sizeOfArray2 - 1);
         print_array(sizeOfArray2, arr2);
+        generate_array(sizeOfArray3, arr3);
         mergeSort(arr3, 0, sizeOfArray3 - 1);
         print_array(sizeOfArray3, arr3);
 
+        generate_array(sizeOfArray1, arr1);
         quickSort(arr1, 0, sizeOfArray1 - 1);
         print_array(sizeOfArray1, arr1);
+        generate_array(sizeOfArray2, arr2);
         quickSort(arr2, 0, sizeOfArray2 - 1);
         print_array(sizeOfArray2, arr2);
+        generate_array(sizeOfArray3, arr3);
         quickSort(arr3, 0, sizeOfArray3 - 1);
         print_array(sizeOfArray3, arr3);
 }
