@@ -27,6 +27,7 @@ int main() {
         init();
 }
 
+
 void init() {
 
         const int SIZEOFARRAY1 = 10000;
