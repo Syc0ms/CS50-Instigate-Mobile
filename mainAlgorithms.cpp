@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 int* generateArray(int size, int arr[]);
 int* copyArray (int size, int arr[], int newArr[]);
 void printArray(int size, int arr[]);
@@ -23,7 +22,6 @@ void merge (int arr[], int start, int mid, int end, int size);
 void quickSort (int arr[], int start, int end, int size);
 int devide(int arr[], int start, int end, int size); 
 void swap(int *a, int *b);
-
 
 int main() {
         init();
