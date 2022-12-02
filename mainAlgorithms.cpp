@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 int* generateArray(int size, int arr[]);
 int* copyArray (int size, int arr[], int newArr[]);
 void printArray(int size, int arr[]);
