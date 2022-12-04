@@ -10,11 +10,11 @@ public:
         Node* next;
 };
 
-
 int main (){
         initLinkedList();
 
 }
+
 int initLinkedList () {
         Node* head;
         Node* one = NULL;
