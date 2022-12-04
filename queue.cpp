@@ -8,7 +8,7 @@ struct node {
 struct node* front = NULL;
 struct node* rear = NULL;
 struct node* temp;
-void Insert(int val) {
+void insertItem(int val) {
         if (rear == NULL) {
                 rear = new node;
                 rear->next = NULL;
@@ -20,6 +20,23 @@ void Insert(int val) {
                 temp->data = val;
                 temp->next = NULL;
                 rear = temp;
+        }
+}
+
+void deleteItemFromQueue() {
+        temp = front;
+        if (front == NULL) {
+                cout<<"Queue is empty!!"<<endl;
+        } else if (temp->next != NULL) {
+                temp = temp->next;
+                cout<< "Element deleted from queue is : "<<front->data<<endl;
+                free(front);
+                front = temp;
+        } else {
+                cout<< "Element deleted from queue is : "<<front->data<<endl;
+                free(front);
+                front = NULL;
+                rear = NULL;
         }
 }
 
@@ -36,12 +53,12 @@ int initQueue () {
         cin >> forth;
         cout<<"Enter the fivth num:"<<endl;
         cin >> fivth;
-        Insert(first);
-        Insert(second);
-        Insert(third);
-        Insert(forth);
-        Insert(fivth);
-               
+        insertItem(first);
+        insertItem(second);
+        insertItem(third);
+        insertItem(forth);
+        insertItem(fivth);
+        deleteItemFromQueue();      
         return 0;
 }
 int main() {
