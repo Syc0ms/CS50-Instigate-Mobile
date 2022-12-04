@@ -39,6 +39,17 @@ void deleteItemFromQueue() {
                 rear = NULL;
         }
 }
+void displayOutput() {
+        temp = front;
+        if ((front == NULL) && (rear == NULL)) {
+                cout<<"Queue is empty"<<endl;
+        return;
+        }
+        while (temp != NULL) {
+                cout<<temp->data<<" "; temp = temp->next;
+        }
+        cout<<endl;
+}
 
 
 int initQueue () {
@@ -58,7 +69,11 @@ int initQueue () {
         insertItem(third);
         insertItem(forth);
         insertItem(fivth);
+        displayOutput();
         deleteItemFromQueue();      
+        cout<<"Queue after one deletion: "<<endl;
+        displayOutput();
+
         return 0;
 }
 int main() {
