@@ -1,49 +1,55 @@
-#include <iostream>
-#include <list>
-
-int initLinkedList ();
+#include<iostream>
 using namespace std;
-
-class Node {
-public:
-        int data;
-        Node* next;
+struct node
+{
+	int data;
+	node *next;	
 };
-
-int main (){
-        initLinkedList();
-
+class list
+{
+		private:
+		node *head, *tail;
+		public:
+		list()
+		{
+			head=NULL;
+			tail=NULL;
+		}
+		void createNode(int value)
+		{
+			node *temp=new node;
+			temp->data=value;
+			temp->next=NULL;
+			if(head==NULL)
+			{
+				head=temp;
+				tail=temp;
+				temp=NULL;
+			}
+			else
+			{	
+				tail->next=temp;
+				tail=temp;
+			}
+		}
+		void printList()
+		{
+			node *temp=new node;
+			temp=head;
+			while(temp!=NULL)
+			{
+				cout<<temp->data<<"\n";
+				temp=temp->next;
+			}
+		}
+};
+int main()
+{
+	list obj;
+	obj.createNode(25);
+	obj.createNode(50);
+	obj.createNode(90);
+	obj.createNode(40);
+	obj.printList();
+	return 0;
 }
-
-int initLinkedList () {
-        Node* head;
-        Node* one = NULL;
-        Node* two = NULL;
-        Node* three = NULL;
-
-        one = new Node();
-        two = new Node();
-        three = new Node();
-        
-        int first, second, third;
-        cout << "Type first item of linked list" << endl ;
-        cin >> first;
-        one->data = first;
-        cout << "Type second item of linked list" << endl;
-        cin >> second;
-        two->data = second;
-        cout << "Type third item of linked list" << endl;
-        cin >> third;
-        three->data = third;
-        
-        one->next = two;
-        two->next = three;
-        three->next = NULL;
-
-        head = one;
-        while (head != NULL) {
-        cout << head->data << " ";
-        head = head->next;
-        }
-}
-
