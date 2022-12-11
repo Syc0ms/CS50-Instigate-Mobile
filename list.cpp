@@ -64,16 +64,41 @@ class list
 			pre->next=temp;
 			temp->next=cur;
 		}
+                void deleteFirst()
+		{
+			node *temp=new node;
+			temp=head;
+			head=head->next;
+			delete temp;
+		}
+		void deleteLast()
+		{
+			node *current=new node;
+			node *previous=new node;
+			current=head;
+			while(current->next!=NULL)
+			{
+				previous=current;
+				current=current->next;
+			}
+			tail=previous;
+			previous->next=NULL;
+			delete current;
+		}
+		void deletePosition(int pos)
+		{
+			node *current=new node;
+			node *previous=new node;
+			current=head;
+			for(int i=1;i<pos;i++)
+			{
+				previous=current;
+				current=current->next;
+			}
+			previous->next=current->next;
+		}
 };
 int main()
 {
-	list obj;
-	obj.createNode(25);
-	obj.createNode(50);
-	obj.createNode(90);
-	obj.createNode(40);
-        obj.insertStart(7777);
-        obj.insertPosition(3, 32);
-	obj.printList();
 	return 0;
 }
