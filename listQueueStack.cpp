@@ -1,10 +1,14 @@
 #include<iostream>
 using namespace std;
+
+//linked list implementation
+
 struct node
 {
-  int key;
+        int key;
 	int data;
 	node *next;	
+        node *link;
 };
 
 class list
@@ -100,6 +104,8 @@ class list
 			previous->next=current->next;
 		}
 };
+
+// Queue implementation
 
 class Queue
 {
@@ -203,7 +209,54 @@ class Queue
 
 };
 
-int main()
-{
-	return 0;
+//Stack implementation 
+
+node *top = NULL;
+
+bool isempty(){
+        if(top == NULL)
+        return true; else
+        return false;
 }
+
+void push (int value) {
+        node *ptr = new node();
+        ptr->data = value;
+        ptr->link = top;
+        top = ptr;
+}
+
+void pop ( ) {
+        if (isempty())
+                cout<<"Stack is Empty";
+                else {
+                        node *ptr = top;
+                        top = top -> link;
+                        delete(ptr);
+                }
+}
+
+void showTop() {
+        if (isempty())
+                cout<<"Stack is Empty";
+        else
+                cout<<"Element at top is : "<< top->data;
+}
+
+void displayStack() {
+        if ( isempty() )
+                cout<<"Stack is Empty";
+        else {
+                node *temp=top;
+                while(temp!=NULL) {   
+                        cout<<temp->data<<" ";
+                        temp=temp->link;
+                }
+                cout<<"\n";
+        }
+}
+int main() {
+
+        return 0;
+}
+
