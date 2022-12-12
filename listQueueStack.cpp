@@ -2,9 +2,11 @@
 using namespace std;
 struct node
 {
+  int key;
 	int data;
 	node *next;	
 };
+
 class list
 {
 		private:
@@ -98,6 +100,109 @@ class list
 			previous->next=current->next;
 		}
 };
+
+class Queue
+{
+        public:
+  	        node *front;
+  	        node *rear;
+
+        Queue() {
+                front = NULL;
+                rear = NULL;
+        }
+
+        bool isEmpty() {
+    	        if(front==NULL && rear==NULL) {
+    		return true;
+	        }
+		else {
+			return false;
+		}
+	}
+
+	 bool checkIfNodeExist(node *n) {
+	 	node *temp = front;
+	 	bool exist=false;
+	 	while(temp!=NULL) {
+	 		if(temp->key==n->key) {
+                                exist=true;
+                                break;
+                        }
+      	                temp=temp->next;
+		}
+		return exist;
+	 }
+
+	void enqueue(node *n){
+                if (isEmpty()) {
+                        front = n;
+                        rear = n;
+                        cout<<"Node  ENQUEUED successfully"<<endl;
+                }
+                else if(checkIfNodeExist(n)) {
+                        cout<<"Node already exist with this Key value."
+                        <<"Enter different Key value"<<endl;
+                }
+                else {
+                        rear->next=n;
+                        rear=n;
+                        cout<<"Node  ENQUEUED successfully"<<endl;
+                }
+
+        }
+
+	node* dequeue() {
+                node *temp=NULL;
+                if (isEmpty()) {
+                        cout << "Queue is Empty" << endl;
+                        return NULL;
+                }
+                else {
+                        if(front==rear){
+                                temp=front;
+                                front = NULL;
+                                rear = NULL;
+                                return temp;
+                        }
+                        else {
+                                temp=front;
+                                front = front->next;
+                                return temp;
+                        }
+
+                }
+        }
+
+	int count() {
+                int count=0;
+                node *temp=front;
+                while(temp!=NULL) {
+                        count++;
+                        temp=temp->next;
+    	        }
+        return count;
+        }
+
+	void display() {
+                if(isEmpty()) {
+                        cout << "Queue is Empty" << endl;
+                }
+                else {
+                        cout << "All values in the Queue are :" << endl;
+                        node *temp=front;
+                        while(temp!=NULL) {
+                                cout<<"("<<temp->key<<","<<temp->data<<")"<<" -> ";
+                                temp=temp->next;
+                        }
+                        cout<<endl;
+                }
+
+        }
+
+
+};
+
 int main()
 {
 	return 0;
