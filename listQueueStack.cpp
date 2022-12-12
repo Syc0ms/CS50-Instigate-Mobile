@@ -2,7 +2,7 @@
 using namespace std;
 struct node
 {
-        int key;
+  int key;
 	int data;
 	node *next;	
 };
@@ -203,9 +203,7 @@ class Queue
 
 };
 
-int main() {
-        Queue obj;
-        obj.display();
-        return 0;
+int main()
+{
+	return 0;
 }
-
